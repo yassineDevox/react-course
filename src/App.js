@@ -1,4 +1,5 @@
 import srcImage from './assets/images/imageSrc.png'
+import  HelloGMC  from './components/hello-gomycode';
 
 const STUDENTS = [
   { name: 'Meri', isPresent: true },
@@ -21,11 +22,7 @@ function App() {
           <source src="myVideo.mp4" type="video/mp4" />
         </video>
       </div>
-      <div
-        className="d-flex justify-content-center align-items-center vh-100">
-        <h1 style={{ fontFamily: "monospace", fontSize: 40 }}> Hello GoMyCode 😄 !!</h1>
-
-      </div>
+     <HelloGMC/>
       <ul>
         {STUDENTS.map((s, i) => (
 
