@@ -1,5 +1,6 @@
 
 const HelloGoMyCode = () => {
+
     return (
         <div
             className="d-flex justify-content-center align-items-center vh-100">
@@ -8,5 +9,7 @@ const HelloGoMyCode = () => {
         </div>
     )
 }
+export default HelloGoMyCode;
 
-export default HelloGoMyCode
+
+
