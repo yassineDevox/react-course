@@ -1,19 +1,8 @@
-import Address from './components/profile/Address';
-import FullName from './components/profile/FullName';
-import ProfilePhoto from './components/profile/ProfilePhoto';
+import ShoppingCart from './components/shopping-cart/shopping-cart';
 
 function App() {
   return (
-    <>
-      <div class="d-flex border align-items-center">
-        <ProfilePhoto />
-        <div>
-
-          <FullName />
-          <Address />
-        </div>
-      </div>
-    </>
+    <ShoppingCart/>
   );
 }
 
