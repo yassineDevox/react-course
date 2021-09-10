@@ -3,13 +3,20 @@ import laptopCaseImage from "./../../assets/images/laptop-case.jpg";
 import Command from "../../model/command-model";
 
 let command1 = new Command(1,"titre 1",laptopCaseImage,20,2)
-
+command1.reduction(20)
 const LIST_COMMANDES = [
-    command1.reduction(20),
+    command1,
     new Command(2,"titre 2",laptopCaseImage,10,6),
     new Command(3,"titre 3",laptopCaseImage,26,1),
 ]
 const ShoppingCart = () => {
+    
+    const addQuantity = (id)=>{
+        LIST_COMMANDES.forEach(c=>{
+            if(c.id==id) c.quantite++
+        })
+        console.table(LIST_COMMANDES)
+    }
     return (
         <div>
             <div>
@@ -20,7 +27,10 @@ const ShoppingCart = () => {
                         <p className="m-0">Total : 100.24$</p>
                     </div>
                     {/* list shopping cart  */}
-                    <ShoppingCartList listCommandes = {LIST_COMMANDES} />
+                    <ShoppingCartList 
+                    onAddQuantite = {(id)=>addQuantity(id)}
+                    listCommandes = {LIST_COMMANDES} />
+                    
                     <div className="d-flex justify-content-between align-items-center p-1">
                         <nav aria-label="Page navigation example">
                             <ul className="pagination m-0">

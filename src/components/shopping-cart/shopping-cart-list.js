@@ -1,16 +1,19 @@
 import ShoppingCartItem from "./shopping-cart-item"
 
 const ShoppingCartList = (props) => {
+    console.log(props)
     return (
         <ul className="list-group">
             {/* list des produits  */}
-            {props.listCommandes.map(command => 
+            {props.listCommandes.map(c => 
                 <ShoppingCartItem 
-                    key={command.id}
-                    title={command.title} 
-                    image={command.image}
-                    price={command.price} 
-                    quantite={command.quantite}/>)}
+                    key={c.id}
+                    title={c.title} 
+                    image={c.image}
+                    price={c.price} 
+                    quantite={c.quantite}
+                    onClickAddQuantite={()=>props.onAddQuantite(c.id)}
+                    />)}
 
         </ul>
 
