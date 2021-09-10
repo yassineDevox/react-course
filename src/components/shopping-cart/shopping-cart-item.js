@@ -7,12 +7,12 @@ const ShoppingCartItem = (data) => {
                     <img width={80} src={data.image} alt="laptop-case" />
                     <div className="p-2">
                         <h6>{data.title}</h6>
-                        <p className="m-0">{data.price}</p>
+                        <p className="m-0">{data.price} $</p>
                     </div>
                 </div>
                 <div className="d-flex align-items-center border justify-content-end">
                     <button className="btn btn-warning m-1">-</button>
-                    <input type="number" defaultValue={1} className="form-control w-25 m-1" />
+                    <input type="number" value={data.quantite} className="form-control w-25 m-1" />
                     <button className="btn btn-success m-1 fw-bold">+</button>
                     <button className="btn btn-danger m-1 fw-bold"><i className="fas fa-trash" /></button>
                 </div>

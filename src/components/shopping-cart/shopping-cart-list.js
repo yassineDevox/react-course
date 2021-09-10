@@ -1,16 +1,16 @@
 import ShoppingCartItem from "./shopping-cart-item"
-import laptopCaseImage from "./../../assets/images/laptop-case.jpg";
 
-const ShoppingCartList = () => {
+const ShoppingCartList = (props) => {
     return (
         <ul className="list-group">
             {/* list des produits  */}
-            {[1, 2, 3, 4].map(v => 
+            {props.listCommandes.map(command => 
                 <ShoppingCartItem 
-                    key={v}
-                    title={"titre "+v} 
-                    image={laptopCaseImage}
-                    price={`${v} $`} />)}
+                    key={command.id}
+                    title={command.title} 
+                    image={command.image}
+                    price={command.price} 
+                    quantite={command.quantite}/>)}
 
         </ul>
 
