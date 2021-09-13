@@ -1,8 +1,16 @@
-import ShoppingCart from './components/shopping-cart/shopping-cart';
+import Welcome from "./components/Welcome";
 
 function App() {
+  const alertMyInput = name => alert(name);
   return (
-    <ShoppingCart/>
+    <>
+    <Welcome functionHello={alertMyInput} >
+     <span className="text-center"> et welcom tout le monde 😄 !  </span>
+    </Welcome>
+    <Welcome name="Meri"/>
+    <Welcome name="Ayman"/>
+    <Welcome name={10}/>
+    </>
   );
 }
 
