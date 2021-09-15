@@ -1,8 +1,8 @@
-import Counter from "./components/Counter";
+import Person from "./components/Person";
 
 function App() {
   return (
-  <Counter />
+  <Person />
   );
 }
 
