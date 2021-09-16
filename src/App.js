@@ -1,8 +1,8 @@
-import Person from "./components/Person";
+import PersonF from "./components/Person-f";
 
 function App() {
   return (
-  <Person />
+  <PersonF />
   );
 }
 
