@@ -6,8 +6,7 @@ export default class LifeCycle extends Component {
 
         super()
         this.state = {
-            counter: 0,
-            shows:true
+            counter: 0
         }
         console.log("constructor 😃");
     }
@@ -31,6 +30,5 @@ export default class LifeCycle extends Component {
     }
     componentWillUnmount() {
         console.log("component Will Unmount 😢 ")
-
     }
 }
