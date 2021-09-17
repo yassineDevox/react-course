@@ -3,12 +3,29 @@ import LifeCycle from "./components/LifeCycle";
 import LifeCycleF from "./components/LifeCycleF";
 
 function App() {
-  const [shows, setShows] = useState(true)
+  let [name, setName] = useState("Ned stark");
+  // we declare the input inside the variable
+  let nameRef = useRef();
+  // we are referring to input to change the value
+  const submitButton = () => {
+    setName(nameRef.current.value);
+  };
+ 
   return (
-    <div className="text-center">
-      { shows ? <LifeCycle /> : null }
-      <button className={shows? "btn btn-danger":"btn btn-success"}
-        onClick={() => setShows(!shows)}>{!shows? "Wake up 🌝":"Sleep 😴" }</button>
+    <div className="App">
+      <p>{name}</p>
+      <h1>Who is your favorite Games of throne character</h1>
+ 
+      <div>
+        <input
+          placehoder="enter your preferred GOT character..."
+          ref={nameRef}
+          type="text"
+        />
+        <button type="button" onClick={submitButton}>
+          Submit
+        </button>
+      </div>
     </div>
   );
 }
