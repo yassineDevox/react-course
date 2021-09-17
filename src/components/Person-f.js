@@ -2,10 +2,11 @@ import React, { useState } from 'react'
 
 const PersonF = () => {
     const [shows, setShows] = useState(true)
-    const [fullname, setFullname] = useState("yagami lighto");
-    const [bio, setBio] = useState("A man that became a hero just for fun 😅");
-    const [profession, setProfession] = useState("Heeroo 🙄");
-    const [imgSrc, setImgSrc] = useState("http://assets.stickpng.com/images/58582c01f034562c582205ff.png");
+    const [fullname] = useState("yagami lighto");
+    const [bio] = useState("A man that became a hero just for fun 😅");
+    const [profession] = useState("Heeroo 🙄");
+    const [imgSrc] = useState("http://assets.stickpng.com/images/58582c01f034562c582205ff.png");
+    
 
     return (
         <div className="d-flex border align-items-center justify-content-between w-50 p-2 mx-auto mt-4">
