@@ -1,6 +1,4 @@
-import { useState } from "react";
-import LifeCycle from "./components/LifeCycle";
-import LifeCycleF from "./components/LifeCycleF";
+import { useRef, useState } from "react";
 
 function App() {
   let [name, setName] = useState("Ned stark");
@@ -9,6 +7,7 @@ function App() {
   // we are referring to input to change the value
   const submitButton = () => {
     setName(nameRef.current.value);
+    nameRef.current.value=""
   };
  
   return (
