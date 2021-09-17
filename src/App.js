@@ -1,32 +1,22 @@
-import { useRef, useState } from "react";
+const { useEffect, useState } = require("react");
 
-function App() {
-  let [name, setName] = useState("Ned stark");
-  // we declare the input inside the variable
-  let nameRef = useRef();
-  // we are referring to input to change the value
-  const submitButton = () => {
-    setName(nameRef.current.value);
-    nameRef.current.value=""
-  };
- 
-  return (
-    <div className="App">
-      <p>{name}</p>
-      <h1>Who is your favorite Games of throne character</h1>
- 
-      <div>
-        <input
-          placehoder="enter your preferred GOT character..."
-          ref={nameRef}
-          type="text"
-        />
-        <button type="button" onClick={submitButton}>
-          Submit
-        </button>
-      </div>
-    </div>
-  );
+function useInterval(timeout, getValue) {
+  const [value, setValue] = useState(getValue);
+  useEffect(() => {
+    const intervalID = setInterval(
+      () => setValue(getValue()),
+      timeout
+    );
+    return function () {
+      clearInterval(intervalId);
+    }
+  }, []);
+  return value;
 }
 
-export default App;
+const getCurrentDate = () => new Date();
+
+function App() {
+  const date = useInterval(1000, getCurrentDate);
+  return <p>Nous sommes le {date.toLocaleString("fr-FR")}</p>;
+}
